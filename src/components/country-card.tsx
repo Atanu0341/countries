@@ -9,7 +9,7 @@ interface CountryCardProps{
 
 export default function CountryCard({country, onClick}: CountryCardProps) {
   return (
-    <Card className="cursor-pointer transition-transform hover:scale-105">
+    <Card className="cursor-pointer transition-transform hover:scale-105 bg-gray-300 dark:bg-black" onClick={onClick}>
         <CardHeader>
         <CardTitle>{country.name.common}</CardTitle>
       </CardHeader>

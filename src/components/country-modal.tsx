@@ -1,4 +1,5 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import Image from "next/image"
 
 interface CountryModalProps {
     country: {
@@ -26,15 +27,17 @@ export default function CountryModal({ country, isOpen, onClose }: CountryModalP
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="sm:max-w-[425px] dark:bg-black bg-gray-300">
                 <DialogHeader>
                     <DialogTitle>{country.name.common}</DialogTitle>
                     <DialogDescription>Detailed information about {country.name.common}</DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
-                    <img
+                    <Image
                         src={country.flags.svg}
                         alt={`Flag of ${country.name.common}`}
+                        width={400}
+                        height={160}
                         className="w-full h-40 object-cover rounded"
                     />
                     <div className="grid grid-cols-2 gap-2">

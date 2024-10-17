@@ -25,7 +25,7 @@ function HomeSection() {
                 const data = await response.json()
                 setCountries(data)
                 setLoading(false)
-            } catch (err) {
+            } catch (error) {
                 setError("An error occurred while fetching countries.")
                 setLoading(false)
             }
@@ -43,12 +43,13 @@ function HomeSection() {
 
     return (
         <div>
-            <h1 className="text-4xl sm:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500 dark:from-neutral-300 dark:to-neutral-800 py-8">
-                Countries of the World
+            <h1 className="text-4xl sm:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-500 dark:from-neutral-300 dark:to-neutral-800 py-8">
+                All the Countries Around the Globe
             </h1>
-            <p className="text-center text-lg text-neutral-300 dark:text-neutral-200">
+            <p className="text-center text-lg text-neutral-800 dark:text-neutral-200">
                 Explore all the countries!
             </p>
+
 
             <div className='px-4 py-4 flex items-center justify-center'>
                 <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
