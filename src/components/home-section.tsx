@@ -26,6 +26,7 @@ function HomeSection() {
                 setCountries(data)
                 setLoading(false)
             } catch (error) {
+                console.error(error)
                 setError("An error occurred while fetching countries.")
                 setLoading(false)
             }
