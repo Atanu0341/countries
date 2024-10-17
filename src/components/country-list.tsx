@@ -40,6 +40,17 @@ function CountryList({ countries, searchTerm, loading, error, handleCountryClick
         return <div className='text-center text-red-500'>{error}</div>
     }
 
+    // if search word not metched with any contry
+
+    if (filteredCountries.length === 0) {
+        return (
+            <div className="text-center text-gray-500">
+                <p className="text-lg">No countries found matching your search.</p>
+                <p className="text-sm mt-2">Please try a different search term.</p>
+            </div>
+        )
+    }
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredCountries.map((country) => (
